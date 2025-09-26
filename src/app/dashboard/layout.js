@@ -1,10 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import { Suspense } from "react";
 import { SiteHeader } from "@/components/Header";
 import { SiteFooter } from "@/components/Footer";
 import { Providers } from "@/components/providers";
-import { HeaderLanding } from "@/components/HeaderLanding";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +27,7 @@ export default function RootLayout({ children }) {
         <Providers>
           <Suspense fallback={<div>Loading...</div>}>
             <div className='min-h-dvh flex flex-col'>
-              <HeaderLanding />
+              <SiteHeader />
               <main className='flex-1'>{children}</main>
               <SiteFooter />
             </div>
